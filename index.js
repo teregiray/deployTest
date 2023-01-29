@@ -1,5 +1,7 @@
+var button = document.getElementById("send_click");
+
 function dataSend() {
-    var button = document.getElementById("send_click");
+
     var request = new XMLHttpRequest();
     var ssid = document.getElementById("ssid").value;
     var password = document.getElementById("password").value;
