@@ -1,0 +1,22 @@
+{
+  "name": "stullamp",
+  "version": "1.0.0",
+  "description": "![Alt text](xBwOGkn%20-%20Imgur.png/?raw=true \"Optional Title\")",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teregiray/stulLamp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/teregiray/stulLamp/issues"
+  },
+  "homepage": "https://github.com/teregiray/stulLamp#readme",
+  "dependencies": {
+    "firebase": "^9.19.1"
+  }
+}
