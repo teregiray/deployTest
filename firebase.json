@@ -2,11 +2,17 @@
   "hosting": {
     "port": 5000,
     "host": "0.0.0.0",
-    "public": "public",
+    "public": "public/index.html",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   }
 }
