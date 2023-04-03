@@ -21,6 +21,7 @@
     </script>
     <script>
       // Функция для авторизации через Github
+
       async function signInWithGitHub() {
         console.log('Starting sign-in process...');
   try {
@@ -173,7 +174,9 @@
           </label>
       <input id="age" type="text" placeholder="Возраст">
     </div>
-    <button class="btn btn-green" onclick="signInWithGithub()">Авторизоваться через Github</button>
+    <button class="btn btn-green" onclick="signInWithGithub(); return false;">Авторизоваться через Github</button>
+    <!-- <button onclick="window.location.href='https://vk.com/feed'; return false;">Перейти на другую страницу</button> -->
+
 
   </form> 
 

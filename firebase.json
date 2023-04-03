@@ -8,8 +8,8 @@
     ],
     "rewrites": [
       {
-        "source": "/auth/**",
-        "function": "app"
+        "source": "/complete-auth",
+        "function": "handleAuthCallback"
       }
     ]
   },
