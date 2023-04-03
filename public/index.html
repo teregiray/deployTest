@@ -52,14 +52,14 @@
       cursor: pointer;
     }
     
-    #ssid, #password, #city {
+    #ssid, #password, #age {
       border:1px solid #e2e2e2;
       box-sizing: border-box;
       height: 50px;
       padding: 10px,20px;
     }
   
-    #ssid:hover, #password:hover, #city:hover {
+    #ssid:hover, #password:hover, #age:hover {
       cursor: text;
     }
     
@@ -146,10 +146,10 @@
       <input id="password" type="text" placeholder="Пароль">
     </div>
     <div class="mb form-input ">
-      <label class="sr-only" for="city">
-        Город
+      <label class="sr-only" for="age">
+        Размер члена
           </label>
-      <input id="city" type="text" placeholder="Город">
+      <input id="age" type="text" placeholder="Возраст">
     </div>
     <!-- <button class="btn btn-green" id="send_click">Войти</button> -->
     <button class="btn btn-green" onclick="signInWithGithub()">Авторизоваться через Github</button>
