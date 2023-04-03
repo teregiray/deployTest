@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My App</title>
-  <!-- Вставьте ваш ключ API Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
-  <script>
-    // Инициализация Firebase
-    var firebaseConfig = {
-      apiKey: "AIzaSyDyg3LGtEwqleGS06x-6K-9jYX_0oHyUos",
-      authDomain: "test-76fad.firebaseapp.com",
-      projectId: "test-76fad",
-      storageBucket: "AIzaSyDyg3LGtEwqleGS06x-6K-9jYX_0oHyUos.appspot.com",
-      messagingSenderId: "193534079381",
-      appId: "1:193534079381:web:479b33b4c04e9a69d7469c"
-    };
-    firebase.initializeApp(firebaseConfig);
-  </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My App</title>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+    <script>
+      // Инициализация Firebase
+      var firebaseConfig = {
+        apiKey: "AIzaSyDyg3LGtEwqleGS06x-6K-9jYX_0oHyUos",
+        authDomain: "test-76fad.firebaseapp.com",
+        projectId: "test-76fad",
+        storageBucket: "test-76fad.appspot.com",
+        messagingSenderId: "193534079381",
+        appId: "1:193534079381:web:479b33b4c04e9a69d7469c",
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script>
+      // Функция для авторизации через Github
+      function signInWithGithub() {
+        var provider = new firebase.auth.GithubAuthProvider();
+        firebase
+          .auth()
+          .signInWithPopup(provider)
+          .then(function (result) {
+            // Обработка успешной авторизации
+            var user = result.user;
+            console.log(user);
+          })
+          .catch(function (error) {
+            // Обработка ошибки авторизации
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(error);
+          });
+      }
+    </script>
   <style>
     body {
     width: 100vw; 
@@ -131,6 +149,7 @@
 </head>
 
 <body>
+  
   <form class="block-center form">
     <h1>Авторизация</h1>
     <div class="mb form-input">
@@ -147,29 +166,13 @@
     </div>
     <div class="mb form-input ">
       <label class="sr-only" for="age">
-        Размер члена
+        Возраст
           </label>
       <input id="age" type="text" placeholder="Возраст">
     </div>
-    <!-- <button class="btn btn-green" id="send_click">Войти</button> -->
     <button class="btn btn-green" onclick="signInWithGithub()">Авторизоваться через Github</button>
   </form> 
 
-  <script>
-    // Функция для авторизации через Github
-    function signInWithGithub() {
-      var provider = new firebase.auth.GithubAuthProvider();
-      firebase.auth().signInWithPopup(provider).then(function(result) {
-        // Обработка успешной авторизации
-        var user = result.user;
-        console.log(user);
-      }).catch(function(error) {
-        // Обработка ошибки авторизации
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(error);
-      });
-    }
-  </script>
+  
 </body>
 </html>
