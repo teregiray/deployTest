@@ -1,7 +1,7 @@
 {
   "name": "stullamp",
   "version": "1.0.0",
-  "type":"module",
+  "type": "module",
   "description": "![Alt text](xBwOGkn%20-%20Imgur.png/?raw=true \"Optional Title\")",
   "main": "index.js",
   "scripts": {
