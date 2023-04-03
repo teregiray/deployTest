@@ -10,7 +10,6 @@
       {
         "source": "/auth/**",
         "function": "app"
-        "destination": "/index.html"
       }
     ]
   },
