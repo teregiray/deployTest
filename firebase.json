@@ -8,7 +8,8 @@
     ],
     "rewrites": [
       {
-        "source": "**",
+        "source": "/auth/**",
+        "function": "app"
         "destination": "/index.html"
       }
     ]
