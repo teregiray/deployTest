@@ -21,23 +21,26 @@
     </script>
     <script>
       // Функция для авторизации через Github
-      function signInWithGithub() {
-        var provider = new firebase.auth.GithubAuthProvider();
-        firebase
-          .auth()
-          .signInWithPopup(provider)
-          .then(function (result) {
-            // Обработка успешной авторизации
-            var user = result.user;
-            console.log(user);
-          })
-          .catch(function (error) {
-            // Обработка ошибки авторизации
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            console.log(error);
-          });
-      }
+      async function signInWithGitHub() {
+        console.log('Starting sign-in process...');
+  try {
+    const provider = new firebase.auth.GithubAuthProvider();
+    const result = await firebase.auth().signInWithPopup(provider);
+    const user = result.user;
+    console.log(`Signed in as ${user.displayName} (${user.email})`);
+  } catch (error) {
+    console.error(`Error signing in with GitHub: ${error}`);
+  }
+}
+    </script>
+    <script>
+      firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    console.log('User is signed in.');
+  } else {
+    console.log('User is not signed in.');
+  }
+});
     </script>
   <style>
     body {
@@ -171,7 +174,6 @@
       <input id="age" type="text" placeholder="Возраст">
     </div>
     <button class="btn btn-green" onclick="signInWithGithub()">Авторизоваться через Github</button>
-    <button onclick="window.location.href = 'https://test-76fad.firebaseapp.com/auth/github';">Войти с помощью GitHub</button>
 
   </form> 
 
